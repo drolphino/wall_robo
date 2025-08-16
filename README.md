@@ -9,6 +9,13 @@ This project is a **coverage planning system** that:
 
 ---
 
+## Video Demo Link
+
+```
+https://youtu.be/J1CAXtzpLNc
+
+```
+
 ## 🚀 Setup Instructions
 
 ### 1. Create and activate virtual environment
