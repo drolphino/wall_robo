@@ -45,12 +45,13 @@ def find_free_rectangles(grid:List[List[int]])-> List[Dict[str,int]]:
         for x in range(W):
             if grid[y][x] ==1 and not visited[y][x]: 
                 rect = {'x': x, 'y': y, 'width': 0, 'height': 0}
-                # Find width
+                # Find max width of section
                 while (x + rect['width'] < W and grid[y][x + rect['width']] == 1 and not visited[y][x + rect['width']]):
                     rect['width'] += 1
-                # Find height
+                # Find max height of section
                 while (y + rect['height'] < H and all(grid[y + rect['height']][x + w] == 1 and not visited[y + rect['height']][x + w] for w in range(rect['width']))):
                     rect['height'] += 1
+                    
                 # Mark cells as visited
                 for dy in range(rect['height']):
                     for dx in range(rect['width']):

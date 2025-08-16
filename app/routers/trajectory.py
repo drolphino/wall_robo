@@ -32,7 +32,7 @@ def calculate_trajectory(wall_id: int, brush_size: int = 5):
         crud.save_section_trajectory(sec["id"], adjusted_path)
         section_paths.append({"section_id": sec["id"], "path": adjusted_path})
 
-    # Step 3: Calculate total cells and painting time
+    # Calculate total cells and painting time
     all_points = [p for s in section_paths for p in s["path"]]
     total_cells = len(all_points)
 
