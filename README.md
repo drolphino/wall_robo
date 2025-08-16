@@ -30,7 +30,7 @@ pip3 install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-Now visit 👉 [http://127.0.0.1:8000](http://127.0.0.1:8000)
+Now visit 👉 [http://127.0.0.1:8000/static](http://127.0.0.1:8000/static)
 
 ### 4. Run tests
 
