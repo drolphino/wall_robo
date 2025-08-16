@@ -2,9 +2,9 @@
 
 This project is a **coverage planning system** that:
 
-- Defines walls, obstacles, and sections
-- Generates trajectories to cover the wall
-- Provides APIs (via FastAPI) to interact with the planner
+- Defines walls, obstacles
+- Calculate sections for a given wall
+- Generates trajectories to cover the wall, sectionwise
 - Logs API requests for monitoring
 
 ---
@@ -24,13 +24,7 @@ source myenv/bin/activate
 pip3 install -r requirements.txt
 ```
 
-### 3. Initialize the database
-
-```bash
-python3 -m app.database.init_db
-```
-
-### 4. Run the server
+### 3. Run the server
 
 ```bash
 uvicorn app.main:app --reload
@@ -38,7 +32,7 @@ uvicorn app.main:app --reload
 
 Now visit 👉 [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
-### 5. Run tests
+### 4. Run tests
 
 ```bash
 pytest -m tests/test_api.py
@@ -133,7 +127,7 @@ pytest -m tests/test_api.py
    - Persist path in `section_trajectories`.
 4. Compute metrics:
    - `total_cells_traversed` = sum of section paths.
-   - `repeated_path_percentage` = % of re-visits (should be near 0).
+   - `total_time_taken` = total_cells_traversed/2 (assumption robo covers 2 cells per unit time).
 5. Return → trajectories + metrics.
 
 ---
