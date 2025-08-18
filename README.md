@@ -34,7 +34,7 @@ pip3 install -r requirements.txt
 ### 3. Run the server
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn app.main:app
 ```
 
 Now visit 👉 [http://127.0.0.1:8000/static](http://127.0.0.1:8000/static)
